@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Menu</title>
+        <link rel="stylesheet" href="css/menu-main.css">
+        <link rel="stylesheet" href="css/menu-general.css">
+        <link rel="stylesheet" href="css/menu-header.css">
+        <link rel="stylesheet" href="css/menu-random-window.css">
+    </head>
+    <body>
+      <header>
+        <div class="header">
+          <div class="page-name">Rezepte</div>
+          <div class="filter-top">
+            <div class="search-input">
+              <input class="search" placeholder="Suche...">
+              <button class="search-button">Suche</button>
+            </div>
+            <!--Sort Filter-->
+            <div class="sort">
+              <button>Sort</button>
+              <div class="sort-list">
+                <div class="sortOption">
+                  <div class="sortType by-name">By Name</div>
+                  <div class="typeOptions">
+                    <div class="top-opt">A-Z</div>
+                    <div class="bottom-opt">Z-A</div>
+                  </div>
+                </div>
+                <div class="sortOption">
+                  <div class="sortType by-rating">By Rating</div>
+                  <div class="typeOptions">
+                    <div class="top-opt">highest</div>
+                    <div class="bottom-opt">lowest</div>
+                  </div>
+                </div>
+                <div class="sortOption">
+                  <div class="sortType by-time">By Time</div>
+                  <div class="typeOptions">
+                    <div class="top-opt">shortest</div>
+                    <div class="bottom-opt">longest</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Sidebar-->
+        <div class="sidebar">
+          <div class="title">Filter</div>
+          <button class="random-filter">Zufallsgenerator</button>
+          <button class="reset">Filter zurücksetzen</button>
+          <!--Different Checkboxes-->
+          <div class="options">
+            <div class="filtergroup">
+              <p class="filter-title" >Hauptzutat</p>
+              <div class="possibilities hauptzutat">
+                <label class="pasta"><input type="checkbox" value="pasta">Nudeln/Pasta</label>
+                <label class="kartoffeln"><input type="checkbox" value="kartoffeln">Kartoffeln</label>
+                <label class="reis"><input type="checkbox" value="reis">Reis</label>
+                <label class="gemuese"><input type="checkbox" value="gemuese">Gemüse</label>
+                <label class="other"><input type="checkbox" value="anderes">Anderes</label>              
+              </div>
+              </div>
+            <div class="filtergroup">
+              <p class="filter-title">Aufwand</p>
+              <div class="possibilities aufwand">
+                <label><input type="checkbox" value="gering">Geringer Aufwand</label>
+                <label><input type="checkbox" value="mittel">Mittlerer Aufwand</label>
+                <label><input type="checkbox" value="hoch">Hoher Aufwand</label>
+              </div>
+            </div>
+            <div class="filtergroup">
+              <p class="filter-title">Zubereitung</p>
+              <div class="possibilities zubereitung">
+                <label><input type="checkbox" value="kochen">Kochen</label>
+                <label><input type="checkbox" value="backen">Backen</label>
+                <label><input type="checkbox" value="kalt">Kalt</label>
+              </div>
+            </div>
+            <div class="filtergroup">
+              <p class="filter-title">Familienmitglieder</p>
+              <div class="possibilities mitglieder">              
+                <label><input type="checkbox" checked="true" value="emilia">Emilia</label>
+                <label><input type="checkbox" checked="true" value="tristan">Tristan</label>
+                <label><input type="checkbox" checked="true" value="thomas">Thomas</label>
+                <label><input type="checkbox" checked="true" value="gabi">Gabi</label>
+              </div>
+            </div>
+            <div class="filtergroup">
+              <p class="filter-title">min. Bewertung</p>
+              <div class="possibilities rating">
+                <label><input type="radio" name="radiobutton" value="0" checked="true">Alle</label>
+                <label><input type="radio" name="radiobutton" value="1">1 </label>
+                <label><input type="radio" name="radiobutton" value="2">2</label>
+                <label><input type="radio" name="radiobutton" value="3">3</label>
+                <label><input type="radio" name="radiobutton" value="4">4</label>
+              </div>
+            </div>
+            <!--Seasonal Filter-->
+            <div class="season">
+              <label class="season-check"><input type="checkbox">Season</label>
+              <div class="summer_or_winter">
+                <p>Summer</p>
+                <label class="switch">
+                  <input type="checkbox" class="check summer" disabled="true">
+                  <span class="slider"></span>
+                </label>
+                <p>Winter</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main>
+        <div class="allRecipes js-meals-grid">
+        </div>
+        <!--Opens Window when generator is clicked-->
+        <div class="random-window">
+          <button class="close">x</button>
+          <div class="choseDays">
+            <p>Wähle Wochentage aus:</p>
+            <label><input type="checkbox" class="checkAll"><div>Wähle Alle</div></label>
+            <div class="allDays">
+              <button class="day">Mon</button>
+              <button class="day">Die</button>
+              <button class="day">Mit</button>
+              <button class="day">Don</button>
+              <button class="day">Fre</button>
+              <button class="day">Sam</button>
+              <button class="day">Son</button>
+            </div>
+          </div>
+          <!--Second Page-->
+          <div class="editDays">
+            <div class="edit">Edit:</div>
+            <div class="time">
+              <p>max. Zeit:</p>
+              <div class="time-limit">
+                <label>Werktags: <input placeholder="20" class="werktag">min</label>
+                <label>WE: <input placeholder="--" class="WE">min</label>
+              </div>
+            </div>
+            <div class="selectedDays"></div>
+          </div>
+          <!--Generates random recipes within html-->
+          <div class="randomRecipes"></div>
+          <div class="pageNumber">
+           <button>Back</button>
+           <button>Next</button> 
+          </div>
+        </div>
+        <!--opened when clicked on single day-->
+        <div class="editWindow">
+          <button class="close">x</button>
+          <div class="filtergroup">
+            <p class="filter-title">Aufwand</p>
+            <div class="possibilities aufwand">
+              <label><input type="checkbox" value="gering">Geringer Aufwand</label>
+              <label><input type="checkbox" value="mittel">Mittlerer Aufwand</label>
+              <label><input type="checkbox" value="hoch">Hoher Aufwand</label>
+            </div>
+          </div>
+          <div class="filtergroup">
+            <p class="filter-title">Zubereitung</p>
+            <div class="possibilities zubereitung">
+              <label><input type="checkbox" value="kochen">Kochen</label>
+              <label><input type="checkbox" value="backen">Backen</label>
+              <label><input type="checkbox" value="kalt">Kalt</label>
+            </div>
+          </div>
+          <div class="filtergroup">
+            <p class="filter-title">Familienmitglieder</p>
+            <div class="possibilities newMitglieder">              
+              <label><input type="checkbox" checked="true" value="emilia">Emilia</label>
+              <label><input type="checkbox" checked="true" value="tristan">Tristan</label>
+              <label><input type="checkbox" checked="true" value="thomas">Thomas</label>
+              <label><input type="checkbox" checked="true" value="gabi">Gabi</label>
+            </div>
+          </div>
+        </div>
+      </main>
+      <script src="scripts/meals.js"></script>
+      <script src="scripts/filter-meals.js"></script>
+      <script src="scripts/filter.js"></script>
+      <script src="scripts/random-recipe.js"></script>
+    </body>
+</html>
