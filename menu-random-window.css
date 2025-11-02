@@ -1,0 +1,206 @@
+:root {
+  --primary-color: rgb(240, 166, 97);
+  --hover-color: rgb(224, 149, 80);
+  --border-color: rgb(178, 109, 44);
+}
+
+/* main window */
+.random-window {
+  background-color: white;
+  min-height: 40%;
+  max-height: 80%;
+  min-width: 55%;
+  max-width: 80%;
+  z-index: 2000;
+  border: 1px black solid;
+  position: fixed;
+  top: calc(50px + 50%);
+  left: calc(50% + 120px);
+  transform: translate(-50%, -50%);
+  display: none;
+  flex-direction: column;
+}
+
+.close {
+  display: inline;
+  width: 30px;
+  text-align: center;
+  align-self: flex-end;
+  border: none;
+  background-color: white;
+  transition: background-color 0.1s;
+  cursor: pointer;
+}
+
+.editWindow .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.close:hover {
+  background-color: rgb(237, 236, 236);
+}
+
+/* first page*/
+
+.choseDays {
+  text-align: center;
+}
+
+.choseDays p{
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 3px;
+}
+
+.choseDays label {
+  display: flex;
+  font-size: 16px;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.allDays, .selectedDays {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 0 2%;
+  margin-bottom: 60px;
+}
+
+.day {
+  background-color: var(--primary-color);
+  border: 1px solid var(--border-color);
+  width: 60px;
+  height: 55px;
+  margin: 2% 2%;
+  border-radius: 6px;
+  position: relative;
+}
+
+.editIcon {
+  width: 40px;
+  height: 40px;
+  transition: 1s;
+  position: absolute;
+  top: 7px;
+  left: 10px;
+  background-color: var(--hover-color);
+  display: none;
+}
+
+.day:hover, .clicked, .day:has(.editIcon:hover) .day{
+  background-color: var(--hover-color);
+}
+
+.editDay:hover .editIcon, .editIcon:hover{
+  display: inline;
+}
+
+/*second page*/
+.editWindow {
+  background-color: white;
+  min-width: 55%;
+  max-width: 80%;
+  height: 55%;
+  overflow: auto;
+  border: 1px solid red;
+  z-index: 5000;
+  top: calc(50px + 50%);
+  left: calc(50% + 120px);
+  position: fixed;
+  transform: translate(-50%, -50%);
+  padding: 10px 0 10px 12px;
+
+  display: none;
+  grid-template-columns: 1.3fr 1fr;
+  column-gap: 10px;
+  row-gap: 5px;
+}
+
+.editWindow .filtergroup {
+  margin: 0px;
+  padding: 0;
+}
+
+/*displayed*/
+.editDays {
+  display: none;
+  text-align: center;
+}
+
+.editDays .edit {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 3px;
+  margin-bottom: 20px;
+}
+
+.time {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+  margin-bottom: 20px;
+}
+
+.time p{
+  margin-top: 0;
+  font-size: 18px;
+}
+
+.time div{
+  display: flex;
+  justify-content: space-between;
+}
+
+.time input {
+  width: 25px;
+  border: 1px solid black;
+}
+
+/*page three*/
+
+.randomRecipes {
+  width: 100%;
+  display: none;
+  grid-template-columns: repeat(1, auto);
+  justify-content: center;
+  overflow: auto;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.dayTitle {
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+.randomRecipes .summary {
+  width: 300px;
+}
+
+/*back and forth buttons*/
+.pageNumber {
+  position: absolute;
+  border-top: 1px solid rgb(224, 205, 177);
+  background-color: white;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 100;
+}
+
+.pageNumber button {
+  height: 30px;
+  width: 90px;
+  margin: 10px 16px;
+  background-color: var(--primary-color);
+  border: 1px solid var(--border-color);
+  border-radius: 45px;
+}
+
+.pageNumber button:hover{
+  background-color: var(--hover-color);
+}
