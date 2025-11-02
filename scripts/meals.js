@@ -389,7 +389,7 @@ new meal("pictures/schupfnudel-auflauf.jpg", "Veganer Schupfnudelauflauf mit Wir
     new meal.rating("4", "3", "3", "3"),
     new meal.zutaten("pasta", [" "])
   ),
-new meal("pictures/shepherd-pie.jpg", "Veganer Shepherd’s Pie", "55", "mittel", "link", "450", "kochen", "all",
+new meal("pictures/shepherd-pie.jpg", "Veganer Shepherd’s Pie", "55", "mittel", "https://biancazapatka.com/de/veganer-shepherds-pie-mit-linsen/#recipe", "450", "kochen", "all",
     new meal.rating("4", "2", "4", "2"),
     new meal.zutaten("anderes", ["karotte", "erbsen", "kartoffeln", "sellerie", "hack"])
   ),
@@ -399,3 +399,4 @@ new meal("pictures/geschnetzeltes-vegan.webp", "Zürcher Geschnetzeltes mit Spä
   ),
 
 ];
+
