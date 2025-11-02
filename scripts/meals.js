@@ -377,7 +377,7 @@ new meal("pictures/moehren-quiche.avif", "Vegane Möhren-Spinat-Quiche", "135", 
     new meal.rating("4", "2", "4", "2"),
     new meal.zutaten("anderes", ["karotte", "tofu"])
   ),
-new meal("pictures/spinatknoedel.webp", "Vegane Spinatknödel mit Pilzen und Walnüssen", "60", "mittel", "link", "520", "kochen", "all",
+new meal("pictures/spinatknoedel.webp", "Vegane Spinatknödel mit Pilzen und Walnüssen", "60", "mittel", "https://filiale.kaufland.de/rezepte/rezeptsuche/rezept.vegane-spinatknoedel-pilzen-walnuessen.r_id=Recipe_9662884.html", "520", "kochen", "all",
     new meal.rating("4", "3", "4", "3"),
     new meal.zutaten("kartoffeln", ["champignons", "austernpilze", "kräuterseitlinge"])
   ),
@@ -397,4 +397,5 @@ new meal("pictures/geschnetzeltes-vegan.webp", "Zürcher Geschnetzeltes mit Spä
     new meal.rating("4", "4", "4", "3"),
     new meal.zutaten("anderes", ["soja", "champignons", "pilze"])
   ),
+
 ];
